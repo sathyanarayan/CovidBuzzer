@@ -84,7 +84,8 @@ def create_table(api_parse_entry, day, district_name):
     """
     try:
         filename = district_name + ".csv"
-        file = open(filename, 'w', newline='')
+        setpath = os.getcwd() + "/output/" + filename
+        file = open(setpath, 'w', newline='')
         writer = csv.writer(file)
         for i in range(0, len(day)):
             date_entry = "Date: " + day[i]
